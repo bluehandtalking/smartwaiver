@@ -9,7 +9,7 @@ smartwaiver is a wrapper to access the Smartwaiver API.
 ## Installation
 Include the gem in your Gemfile:
 ``` ruby
-gem "smartwaiver", "~> 0.0.2"
+gem "smartwaiver", "~> 0.0.4"
 ```
 
 Create a initializers/smartwaiver.rb file:
