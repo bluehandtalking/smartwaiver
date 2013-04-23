@@ -1,6 +1,6 @@
 class ApisController < ApplicationController
   
-  # This is a sample controller with one method only, to retrieving a list of waivers. 
+  # This is a sample controller with one method only, to demonstrate retrieving a list of waivers. 
   # You will need to include the 'smartwaiver' gem, a smartwaiver.rb initializer file, and create a view file before using
   # this controller.
     
