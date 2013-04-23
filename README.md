@@ -61,6 +61,8 @@ pdf_src = Smartwaiver.download_pdf( participant['pdf_url'] )
   
 ``` 
 
+Look in the examples folder for some sample controllers.
+
 
 [api_docs]: https://www.smartwaiver.com/p/API
 [apply_keys]: https://www.smartwaiver.com/m/rest/
