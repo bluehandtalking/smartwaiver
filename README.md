@@ -47,11 +47,14 @@ class ApisController < ApplicationController
 end
 ``` 
 
-The 3 methods included in this gem are:
+The 4 methods included in this gem are:
 ``` ruby
 
 # Retrieve up to 10 waivers
 @api_result = Smartwaiver.get_waivers(10)
+
+# Retreive data about a specific waiver
+@api_result = Smartwaiver.get_waiver( "5176c8b298d9f" )
 
 # Retrieve a list of waiver types with their links
 @api_result = Smartwaiver.get_waivertypes  
