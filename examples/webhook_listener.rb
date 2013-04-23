@@ -9,10 +9,6 @@ class ApisController < ApplicationController
   
   def webhook
     
-    params[:unique_id] = "5176c8b298d9f" 
-    params[:credential] = "740faf083893ef9a8d452e1f9d3119a7" 
-    params[:event] = "new-waiver"
-    
     # make sure all required values are passed
     if params[:unique_id].blank?
       raise ArgumentError, "The :unique_id parameter must be posted to this URL"
