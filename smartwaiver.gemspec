@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'smartwaiver'
-  s.version     = '0.0.2'
+  s.version     = '0.0.4'
   s.date        = '2013-05-23'
   s.summary     = "Interface for SmartWaiver API"
   s.description = "Interface for SmartWaiver API"

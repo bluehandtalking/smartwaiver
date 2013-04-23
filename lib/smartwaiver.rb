@@ -13,6 +13,16 @@ module Smartwaiver
     @agent = Agent.new(@@api_key, @@api_version, rest_limit, @@base_url) 
     return @agent.request
   end
+  
+  # Retrieves individual waiver from the Smartwaiver API.
+  #
+  # @param [String] waiver_id ID of waiver to retrieve, eg "21"
+  def self.get_waiver( waiver_id )
+    @agent = Agent.new(@@api_key, @@api_version, false, @@base_url) 
+    
+    require 'open-uri'
+    return @agent.request( "&rest_waiverid=#{URI::encode(waiver_id)}" )
+  end  
 
   # Retrieves list of waiver types from the Smartwaiver API.
   #
@@ -28,6 +38,13 @@ module Smartwaiver
   def self.download_pdf( pdf_url = "")
     @agent = Agent.new(@@api_key, @@api_version, false, @@base_url) 
     return @agent.download_pdf( pdf_url )
+  end
+
+  # Verify credentials from webhook
+  #
+  # @param [String] unique_id Unique ID for an event, which is verified by hashing, eg "5176c8b298d9f"  
+  def self.hashed_credential( unique_id = "" )
+    return Digest::MD5.hexdigest( @@api_key + unique_id )
   end
   
 end
