@@ -10,12 +10,11 @@ class ApisController < ApplicationController
   def webhook
     
     # make sure all required values are passed
-    if params[:unique_id].blank?
-      raise ArgumentError, "The :unique_id parameter must be posted to this URL"
-    elsif params[:credential].blank?
-      raise ArgumentError, "The :credential parameter must be posted to this URL"
-    elsif params[:event].blank?
-     raise ArgumentError, "The :event parameter must be posted to this URL"
+    webhook_params = [params[:unique_id], params[:credential], params[:event]]
+    webhook_params.each do |param|
+       if param.blank?
+	 raise ArgumentError, "The #{param} parameter must be posted to this URL" 
+       end
     end
     
     # for now you only want to support new-waiver events.  This was added so that we can add future web hooks without conflict.
