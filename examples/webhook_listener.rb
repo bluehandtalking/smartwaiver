@@ -13,7 +13,7 @@ class ApisController < ApplicationController
     webhook_params = [params[:unique_id], params[:credential], params[:event]]
     webhook_params.each do |param|
        if param.blank?
-	 raise ArgumentError, "The #{param} parameter must be posted to this URL" 
+	 raise ArgumentError, "You have a nil parameter posted to this URL" 
        end
     end
     
